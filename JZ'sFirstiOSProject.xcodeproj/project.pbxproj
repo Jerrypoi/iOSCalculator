@@ -14,6 +14,7 @@
 		C43CC1731F1A01F80028DA3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C43CC1711F1A01F80028DA3B /* LaunchScreen.storyboard */; };
 		C43CC17E1F1A01F80028DA3B /* JZ_sFirstiOSProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CC17D1F1A01F80028DA3B /* JZ_sFirstiOSProjectTests.swift */; };
 		C43CC1891F1A01F80028DA3B /* JZ_sFirstiOSProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CC1881F1A01F80028DA3B /* JZ_sFirstiOSProjectUITests.swift */; };
+		C4F5B8A61F3AE95400CA12A2 /* CalculatorModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F5B8A51F3AE95400CA12A2 /* CalculatorModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C43CC1841F1A01F80028DA3B /* JZ'sFirstiOSProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JZ'sFirstiOSProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C43CC1881F1A01F80028DA3B /* JZ_sFirstiOSProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JZ_sFirstiOSProjectUITests.swift; sourceTree = "<group>"; };
 		C43CC18A1F1A01F80028DA3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4F5B8A51F3AE95400CA12A2 /* CalculatorModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorModule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +99,10 @@
 		C43CC1671F1A01F80028DA3B /* JZ'sFirstiOSProject */ = {
 			isa = PBXGroup;
 			children = (
-				C43CC1681F1A01F80028DA3B /* AppDelegate.swift */,
+				C4F5B8A41F3AE4A100CA12A2 /* SUPPORTING FILE */,
 				C43CC16A1F1A01F80028DA3B /* ViewController.swift */,
+				C4F5B8A51F3AE95400CA12A2 /* CalculatorModule.swift */,
 				C43CC16C1F1A01F80028DA3B /* Main.storyboard */,
-				C43CC16F1F1A01F80028DA3B /* Assets.xcassets */,
-				C43CC1711F1A01F80028DA3B /* LaunchScreen.storyboard */,
-				C43CC1741F1A01F80028DA3B /* Info.plist */,
 			);
 			path = "JZ'sFirstiOSProject";
 			sourceTree = "<group>";
@@ -123,6 +123,17 @@
 				C43CC18A1F1A01F80028DA3B /* Info.plist */,
 			);
 			path = "JZ'sFirstiOSProjectUITests";
+			sourceTree = "<group>";
+		};
+		C4F5B8A41F3AE4A100CA12A2 /* SUPPORTING FILE */ = {
+			isa = PBXGroup;
+			children = (
+				C43CC1681F1A01F80028DA3B /* AppDelegate.swift */,
+				C43CC16F1F1A01F80028DA3B /* Assets.xcassets */,
+				C43CC1711F1A01F80028DA3B /* LaunchScreen.storyboard */,
+				C43CC1741F1A01F80028DA3B /* Info.plist */,
+			);
+			name = "SUPPORTING FILE";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F5B8A61F3AE95400CA12A2 /* CalculatorModule.swift in Sources */,
 				C43CC16B1F1A01F80028DA3B /* ViewController.swift in Sources */,
 				C43CC1691F1A01F80028DA3B /* AppDelegate.swift in Sources */,
 			);
@@ -516,6 +528,7 @@
 				C43CC18F1F1A01F80028DA3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C43CC1901F1A01F80028DA3B /* Build configuration list for PBXNativeTarget "JZ'sFirstiOSProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +537,7 @@
 				C43CC1921F1A01F80028DA3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C43CC1931F1A01F80028DA3B /* Build configuration list for PBXNativeTarget "JZ'sFirstiOSProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +546,7 @@
 				C43CC1951F1A01F80028DA3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
