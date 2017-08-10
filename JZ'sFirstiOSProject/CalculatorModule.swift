@@ -12,6 +12,8 @@ struct calculatorBrain {
     private enum Operations {
         case constant(Double)
         case unaryOperation((Double)-> (Double))
+        case binaryOperation((Double , Double)->(Double))
+        case equal
     }
     
     private var accumulator: Double?
@@ -19,7 +21,12 @@ struct calculatorBrain {
         "π"   :Operations.constant(Double.pi),
         "sin" :Operations.unaryOperation(sin),
         "cos" :Operations.unaryOperation(cos),
-        "√"   :Operations.unaryOperation(sqrt)
+        "√"   :Operations.unaryOperation(sqrt),
+        "✕"   :Operations.binaryOperation( { $0 * $1 }),
+        "-"   :Operations.binaryOperation( { $0 - $1 }),
+        "÷"   :Operations.binaryOperation( { $0 / $1 }),
+        "+"   :Operations.binaryOperation( { $0 + $1 }),
+        "="   :Operations.equal
     ]
     
     mutating func performOperations(_ sysmbol:String){
@@ -31,8 +38,35 @@ struct calculatorBrain {
                 if accumulator != nil{
                     accumulator = function(accumulator!)
                 }
+            case .binaryOperation(let function):
+                if accumulator != nil{
+                    onGoingBinaryOperation = pendingBinaryOperation(function: function, firstOperand: accumulator!)
+                    accumulator = nil
+                }
+            case .equal:
+                performBinaryOperation()
             }
         }
+    }
+    private mutating func performBinaryOperation(){
+        if onGoingBinaryOperation != nil && accumulator != nil{
+            accumulator = onGoingBinaryOperation!.performOperation(with: accumulator!)
+            onGoingBinaryOperation = nil
+            
+        }
+    }
+    
+    
+    private var onGoingBinaryOperation: pendingBinaryOperation?
+    
+    private struct pendingBinaryOperation{
+        let function: (Double , Double) -> Double
+        let firstOperand: Double
+        
+        func performOperation(with secondOperand:Double) -> Double{
+            return function(firstOperand , secondOperand)
+        }
+        
     }
     
     
