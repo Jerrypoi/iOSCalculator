@@ -16,13 +16,15 @@ struct calculatorBrain {
         case equal
     }
     
+
+    
     private var accumulator: Double?
     private let operationSymbols: Dictionary<String , Operations>=[
         "π"   :Operations.constant(Double.pi),
         "sin" :Operations.unaryOperation(sin),
         "cos" :Operations.unaryOperation(cos),
         "√"   :Operations.unaryOperation(sqrt),
-        "✕"   :Operations.binaryOperation( { $0 * $1 }),
+        "✕"   :Operations.binaryOperation( {$0 * $1 }),
         "-"   :Operations.binaryOperation( { $0 - $1 }),
         "÷"   :Operations.binaryOperation( { $0 / $1 }),
         "+"   :Operations.binaryOperation( { $0 + $1 }),
