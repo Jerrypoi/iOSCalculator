@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var numDisplay: UILabel!
     var userIsInTheMiddleOfTyping = false
-    
+    var haveDotInDisplay = false
     var displayValue: Double {
         get{
             return Double(numDisplay.text!)!
@@ -33,11 +33,18 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func dotTouched(_ sender: UIButton) {
+        if haveDotInDisplay == false{
+            numDisplay.text! += "."
+            haveDotInDisplay = true
+        }
+    }
     private var brain:calculatorBrain = calculatorBrain()
     @IBAction func operationtouched(_ sender: UIButton) {
         if userIsInTheMiddleOfTyping{
             brain.setOperand(displayValue)
             userIsInTheMiddleOfTyping = false
+            haveDotInDisplay = false
         }
         if let mathematicalSymbol = sender.currentTitle{
             brain.performOperations(mathematicalSymbol)
